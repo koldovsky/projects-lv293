@@ -23,7 +23,7 @@ export class StudentlistService {
       "websiteUrl": "https://onechezzz.github.io/myProject/",
       "codeSourceUrl": "https://github.com/onechezzz/myProject/",
       "cvUrl": "",
-      "photoUrl": "assets/images/no-photo.gif"
+      "photoUrl": "assets/images/students/afanasiev.jpg"
     },
     {
       "name": "Marian Semchyshyn",
