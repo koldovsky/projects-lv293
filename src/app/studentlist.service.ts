@@ -55,8 +55,8 @@ export class StudentlistService {
     },
     {
       "name": "Vadym Terpko",
-      "websiteUrl": "",
-      "codeSourceUrl": "",
+      "websiteUrl": "https://mithranddir.github.io/web_fundamentals/",
+      "codeSourceUrl": "https://github.com/mithranddir/web_fundamentals",
       "cvUrl": "",
       "photoUrl": ""
     },
@@ -97,8 +97,8 @@ export class StudentlistService {
     },
     {
       "name": "Andrii Nakota",
-      "websiteUrl": "https://andnkt.github.io/my-site70-perc/",
-      "codeSourceUrl": "https://andnkt.github.io/my-site70-perc/",
+      "websiteUrl": "https://andnkt.github.io/site-final/",
+      "codeSourceUrl": "https://andnkt.github.io/site-final/",
       "cvUrl": "",
       "photoUrl": "assets/images/no-photo.gif"
     },
