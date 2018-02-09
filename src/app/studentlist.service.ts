@@ -83,8 +83,8 @@ export class StudentlistService {
     },
     {
       "name": "Alder Campoverde",
-      "websiteUrl": "https://alderjavier.github.io/casipersonal/",
-      "codeSourceUrl": "https://github.com/alderjavier/casipersonal/",
+      "websiteUrl": "https://alderjavier.github.io/proyectofinal/",
+      "codeSourceUrl": "https://github.com/alderjavier/proyectofinal",
       "cvUrl": "",
       "photoUrl": "assets/images/students/campoverde.jpg"
     },
