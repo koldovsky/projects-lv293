@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MediaMatcher} from '@angular/cdk/layout';
 
 import { AppComponent } from './app.component';
+import { AppMaterialModule } from './app-material.module';
 
 
 @NgModule({
@@ -10,9 +12,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    AppMaterialModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MediaMatcher],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
