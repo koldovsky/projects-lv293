@@ -40,10 +40,7 @@
 
   .content {
       padding: 0 20px;
-  }
-
-  .content {
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
   }
 
   .photo-container img {
@@ -60,4 +57,14 @@
     height: 48px;
   }
 
-  
+  .input-filter {
+    border: 0;
+    margin-top: 10px;
+    margin-left: 82px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+  }
+
+  :host ::ng-deep .search-highlight {
+    font-weight: bold;
+  }

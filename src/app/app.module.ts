@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material.module';
+import { HighlightPipe } from './highlight.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HighlightPipe
   ],
   imports: [
     AppMaterialModule,

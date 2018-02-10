@@ -8,11 +8,12 @@
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="true"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-        <input [(ngModel)]="nameFilter">           
+        <input class="input-filter" type="text" [(ngModel)]="nameFilter" placeholder="search">           
         <mat-nav-list class="nav-list">
           <ng-container *ngFor="let student of students">
             <a *ngIf="student.name.toLowerCase().includes(nameFilter.toLowerCase())" mat-list-item (click)="setCurrStudent(student)"> 
-              <img src="{{student.photoUrl}}" alt="{{student.name}}" class="photo-thumbnail"> {{student.name}}
+              <img src="{{student.photoUrl}}" alt="{{student.name}}" class="photo-thumbnail"> 
+              <span [innerHTML]="student.name | highlight: nameFilter"></span>
             </a>
           </ng-container>  
         </mat-nav-list>
