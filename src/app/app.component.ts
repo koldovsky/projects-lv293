@@ -11,8 +11,9 @@ import { StudentlistService } from './studentlist.service';
 })
 export class AppComponent {
   mobileQuery: MediaQueryList; 
-  students;
-  currStudent;
+  public students;
+  public currStudent;
+  public nameFilter = '';
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, 
     private studentList: StudentlistService) {
