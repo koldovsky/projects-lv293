@@ -63,8 +63,10 @@
     margin-left: 82px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 1rem;
+    width: 150px;
   }
 
   :host ::ng-deep .search-highlight {
     font-weight: bold;
   }
+  

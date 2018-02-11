@@ -16,8 +16,8 @@ export class AppComponent {
   public nameFilter = '';
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, 
-    private studentList: StudentlistService) {
-    this.students = studentList.students;  
+    private studentListService: StudentlistService) {
+    this.students = studentListService.students;  
     this.currStudent = this.students[0];
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

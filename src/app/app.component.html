@@ -9,6 +9,9 @@
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="true"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <input class="input-filter" type="text" [(ngModel)]="nameFilter" placeholder="search">           
+        <button mat-icon-button [disabled]="!nameFilter" (click)="nameFilter=''">
+          <mat-icon aria-label="Clear">highlight_off</mat-icon>
+        </button>      
         <mat-nav-list class="nav-list">
           <ng-container *ngFor="let student of students">
             <a *ngIf="student.name.toLowerCase().includes(nameFilter.toLowerCase())" mat-list-item (click)="setCurrStudent(student)"> 
