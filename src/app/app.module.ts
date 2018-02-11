@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material.module';
@@ -18,7 +19,8 @@ import { HighlightPipe } from './highlight.pipe';
     AppMaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [MediaMatcher],
   bootstrap: [AppComponent]

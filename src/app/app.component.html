@@ -13,7 +13,7 @@
           <mat-icon aria-label="Clear">highlight_off</mat-icon>
         </button>      
         <mat-nav-list class="nav-list">
-          <ng-container *ngFor="let student of students">
+          <ng-container *ngFor="let student of students | async">
             <a *ngIf="student.name.toLowerCase().includes(nameFilter.toLowerCase())" mat-list-item (click)="setCurrStudent(student)"> 
               <img src="{{student.photoUrl}}" alt="{{student.name}}" class="photo-thumbnail"
                onError="this.src='assets/images/no-photo.gif'"> 
@@ -24,12 +24,12 @@
       </mat-sidenav>
   
       <mat-sidenav-content class="content">
-        <h1>{{currStudent.name}}</h1>
-        <p>Website: <a target="_blank" href="{{currStudent.websiteUrl}}">{{currStudent.websiteUrl}}</a></p>
-        <p>Code Source: <a target="_blank" href="{{currStudent.codeSourceUrl}}">{{currStudent.codeSourceUrl}}</a></p>
-        <p *ngIf="currStudent.cvUrl">CV: <a target="_blank" href="{{currStudent.cvUrl}}">{{currStudent.cvUrl}}</a></p>
+        <h1>{{currStudent?.name}}</h1>
+        <p>Website: <a target="_blank" href="{{currStudent?.websiteUrl}}">{{currStudent?.websiteUrl}}</a></p>
+        <p>Code Source: <a target="_blank" href="{{currStudent?.codeSourceUrl}}">{{currStudent?.codeSourceUrl}}</a></p>
+        <p *ngIf="currStudent?.cvUrl">CV: <a target="_blank" href="{{currStudent?.cvUrl}}">{{currStudent?.cvUrl}}</a></p>
         <div class="photo-container">
-          <img src={{currStudent.photoUrl}} alt="{{currStudent.name}}" onError="this.src='assets/images/no-photo.gif'">
+          <img src={{currStudent?.photoUrl}} alt="{{currStudent?.name}}" onError="this.src='assets/images/no-photo.gif'">
         </div>
       </mat-sidenav-content>
     </mat-sidenav-container>
