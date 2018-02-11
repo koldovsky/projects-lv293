@@ -100,7 +100,7 @@ export class StudentlistService {
       "websiteUrl": "https://andnkt.github.io/site-final/",
       "codeSourceUrl": "https://andnkt.github.io/site-final/",
       "cvUrl": "",
-      "photoUrl": "assets/images/no-photo.gif"
+      "photoUrl": ""
     },
     {
       "name": "Ihor Dubovskyi",
@@ -166,13 +166,7 @@ export class StudentlistService {
     return this
             .studentList
             .filter( s => s.websiteUrl )
-            .sort( (a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0) ) 
-            .map( student => { 
-              if (!student.photoUrl) {
-                  student.photoUrl = 'assets/images/no-photo.gif';
-              }
-              return student;
-            });
+            .sort( (a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0) ); 
   }
 
 }
