@@ -1,4 +1,4 @@
-import { DomSanitizer } from '@angular/platform-browser'
+import { DomSanitizer } from '@angular/platform-browser';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { HighlightPipe } from './highlight.pipe';
@@ -23,12 +23,12 @@ fdescribe('AutoComplete Component - Highlight pipe', () => {
       }));
 
     it('highlights search term in the text', () => {
-      let result = pipe.transform('search text', 'text');
-        expect(result).toBe('search <span class="search-highlight">text</span>')
+      const result = pipe.transform('search text', 'text');
+        expect(result).toBe('search <span class="search-highlight">text</span>');
     });
 
     it('shoudl return same text', () => {
-        let result = pipe.transform('search text', '');
-        expect(result).toBe('search text', 'search text')
+        const result = pipe.transform('search text', '');
+        expect(result).toBe('search text', 'search text');
       });
 });

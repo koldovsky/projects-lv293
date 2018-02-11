@@ -1,4 +1,7 @@
-<div class="container" [class.is-mobile]="mobileQuery.matches">
+<div class="spinner-container"  *ngIf="!currStudent">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="container" [class.is-mobile]="mobileQuery.matches" *ngIf="currStudent">
     <mat-toolbar color="primary" class="toolbar">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
       <h1 class="app-name">Project List</h1>
@@ -24,13 +27,15 @@
       </mat-sidenav>
   
       <mat-sidenav-content class="content">
-        <h1>{{currStudent?.name}}</h1>
-        <p>Website: <a target="_blank" href="{{currStudent?.websiteUrl}}">{{currStudent?.websiteUrl}}</a></p>
-        <p>Code Source: <a target="_blank" href="{{currStudent?.codeSourceUrl}}">{{currStudent?.codeSourceUrl}}</a></p>
-        <p *ngIf="currStudent?.cvUrl">CV: <a target="_blank" href="{{currStudent?.cvUrl}}">{{currStudent?.cvUrl}}</a></p>
-        <div class="photo-container">
-          <img src={{currStudent?.photoUrl}} alt="{{currStudent?.name}}" onError="this.src='assets/images/no-photo.gif'">
-        </div>
+        <ng-container>
+          <h1>{{currStudent?.name}}</h1>
+          <p>Website: <a target="_blank" href="{{currStudent?.websiteUrl}}">{{currStudent?.websiteUrl}}</a></p>
+          <p>Code Source: <a target="_blank" href="{{currStudent?.codeSourceUrl}}">{{currStudent?.codeSourceUrl}}</a></p>
+          <p *ngIf="currStudent?.cvUrl">CV: <a target="_blank" href="{{currStudent?.cvUrl}}">{{currStudent?.cvUrl}}</a></p>
+          <div class="photo-container">
+            <img src={{currStudent?.photoUrl}} alt="{{currStudent?.name}}" onError="this.src='assets/images/no-photo.gif'">
+          </div>        
+       </ng-container>
       </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

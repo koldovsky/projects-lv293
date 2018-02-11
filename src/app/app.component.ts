@@ -1,5 +1,5 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 
 import { StudentlistService } from './studentlist.service';
 
@@ -9,15 +9,16 @@ import { StudentlistService } from './studentlist.service';
   styleUrls: ['./app.component.css'],
   providers: [ StudentlistService ]
 })
-export class AppComponent {
-  mobileQuery: MediaQueryList; 
+export class AppComponent implements OnDestroy {
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
   public students;
   public currStudent;
   public nameFilter = '';
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, 
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
       private studentListService: StudentlistService) {
-    this.students = studentListService.students;  
+    this.students = studentListService.students;
     this.students.subscribe(result => this.currStudent = result[0]);
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -27,8 +28,6 @@ export class AppComponent {
   setCurrStudent(student) {
     this.currStudent = student;
   }
-  
-  private _mobileQueryListener: () => void;
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
